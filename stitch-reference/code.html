@@ -1,0 +1,719 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TicketWala | Personal Ticket Booking Assistance in India</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#004491",
+            "on-surface-variant": "#44474d",
+            "primary-container": "#10233f",
+            "inverse-primary": "#b5c7eb",
+            "tertiary-fixed": "#7ffc97",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#d7e2ff",
+            "on-tertiary-fixed-variant": "#005320",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#eff1f4",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#005bbe",
+            "surface-dim": "#d8dadd",
+            "on-primary-fixed-variant": "#364765",
+            "surface": "#f7f9fc",
+            "surface-container": "#eceef1",
+            "surface-tint": "#4d5f7e",
+            "primary": "#000d23",
+            "tertiary-container": "#002a0d",
+            "on-background": "#191c1e",
+            "tertiary": "#001103",
+            "on-primary-container": "#798bac",
+            "on-secondary-fixed": "#001a40",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e0e3e6",
+            "on-primary-fixed": "#071b37",
+            "background": "#f7f9fc",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#acc7ff",
+            "primary-fixed": "#d6e3ff",
+            "outline": "#75777e",
+            "surface-container-high": "#e6e8eb",
+            "surface-bright": "#f7f9fc",
+            "secondary-container": "#5494ff",
+            "tertiary-fixed-dim": "#62df7d",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#b5c7eb",
+            "on-tertiary-container": "#0d9f47",
+            "on-tertiary-fixed": "#002109",
+            "on-surface": "#191c1e",
+            "surface-container-low": "#f2f4f7",
+            "on-secondary-container": "#002d64",
+            "inverse-surface": "#2d3133",
+            "surface-container-highest": "#e0e3e6",
+            "on-error-container": "#93000a",
+            "outline-variant": "#c5c6ce"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "space-xl": "2.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md-mobile": ["Manrope"],
+            "label-sm": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "title-md": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "title-sm": ["Inter"],
+            "headline-lg-mobile": ["Manrope"]
+          },
+          fontSize: {
+            "headline-md-mobile": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+            "label-sm": ["11px", { lineHeight: "16px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+            "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "800" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "headline-xl": ["40px", { lineHeight: "48px", fontWeight: "800" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "500" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+            "title-sm": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- 1. COMPACT STICKY HEADER (Shared Components Anchor TopAppBar Adapted) -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-space-md py-space-sm bg-surface-container-lowest shadow-sm border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-tight">TicketWala</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal text-[10px] leading-none">Personal Booking Assistance</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-primary-fixed font-label-md text-label-md active:scale-95 transition-transform duration-150" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20booking%20a%20ticket" rel="noopener noreferrer" target="_blank">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" data-icon="chat">chat</span>
+<span class="font-semibold text-primary">WhatsApp</span>
+</a>
+</div>
+</header>
+<main class="w-full max-w-lg mx-auto px-space-md pt-space-md pb-28">
+<!-- 2. HERO SECTION -->
+<section class="flex flex-col gap-space-md pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high w-fit">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="support_agent">support_agent</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">PERSONAL TICKET BOOKING ASSISTANCE</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary tracking-tight">
+          Need a Ticket? <br/>
+<span class="text-secondary">I'll Help You Book It.</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant pt-1 leading-relaxed">
+          From bus and train journeys to flights and movie tickets, get personal booking assistance without the hassle of navigating multiple websites yourself.
+        </p>
+</div>
+<!-- Quick Action CTAs -->
+<div class="flex flex-col sm:flex-row gap-space-sm pt-space-xs">
+<a class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-tertiary-container text-on-tertiary font-title-sm text-title-sm shadow-sm active:scale-95 transition-all duration-150" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20booking%20a%20ticket" rel="noopener noreferrer" style="background-color: #16A34A;" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+<span>Chat on WhatsApp</span>
+</a>
+<a class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-surface-container-lowest text-primary border border-surface-container-high font-title-sm text-title-sm active:scale-95 transition-all duration-150 shadow-sm" href="tel:919876543210">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="call">call</span>
+<span>Call Me (Direct)</span>
+</a>
+</div>
+<!-- Trust Highlights Pill Row -->
+<div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-lg bg-surface-container-lowest border border-surface-container text-center">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="person_check">person_check</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-0.5">Direct 1-on-1</span>
+</div>
+<div class="flex flex-col items-center border-x border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-0.5">Clear Charges</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="help_center">help_center</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-0.5">Query Support</span>
+</div>
+</div>
+<!-- Authentic Journey Snapshot Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container relative overflow-hidden">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Active Assistance Desk</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">All India Support</span>
+</div>
+<div class="pt-3 flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-title-sm text-title-sm font-semibold">Delhi (NDLS) â†’ Mumbai (BCT)</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Train Route</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            "Rahul, I need 2 berths for next Tuesday. Rajdhani preferred or evening Duronto."
+          </p>
+<div class="flex items-center gap-2 mt-1 pt-2 border-t border-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm">Options verified &amp; seat rules checked together before booking</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. HOW I CAN HELP (Services Section) -->
+<section class="mt-space-xl flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">How I Can Help</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">Personal assistance for different kinds of tickets.</p>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Bus Tickets -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined" data-icon="directions_bus">directions_bus</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Bus Tickets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                Find suitable routes and get help with your bus booking across private and state operators.
+              </p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-secondary font-semibold hover:underline" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20with%20Bus%20ticket%20booking" rel="noopener noreferrer" target="_blank">
+<span>Enquire about bus tickets</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Train Tickets -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined" data-icon="train">train</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Train Tickets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                Get assistance with train booking requirements, tatkal timings, and the applicable booking process.
+              </p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-secondary font-semibold hover:underline" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20with%20Train%20ticket%20booking" rel="noopener noreferrer" target="_blank">
+<span>Enquire about train tickets</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Flight Tickets -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined" data-icon="flight">flight</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Flight Tickets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                Get help with domestic and international flight booking enquiries, baggage rules, and seat selections.
+              </p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-secondary font-semibold hover:underline" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20with%20Flight%20ticket%20booking" rel="noopener noreferrer" target="_blank">
+<span>Enquire about flight tickets</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Movie Tickets -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined" data-icon="movie">movie</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Movie Tickets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+                Get assistance finding suitable movie booking options, premiere slots, and cinema seat arrangements.
+              </p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-secondary font-semibold hover:underline" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20with%20Movie%20ticket%20booking" rel="noopener noreferrer" target="_blank">
+<span>Enquire about movie tickets</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Explicit Disclaimer Note -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant flex gap-2 items-start border border-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm leading-normal">
+<strong class="font-semibold text-on-surface">Notice:</strong> Independent assistance service. Actual ticket availability, pricing, and rules are determined by respective official operators.
+        </p>
+</div>
+</section>
+<!-- 4. ABOUT THE OWNER (Personal Trust Section) -->
+<section class="mt-space-xl p-space-md rounded-xl bg-surface-container-lowest border border-surface-container">
+<div class="flex items-center gap-3 pb-space-sm border-b border-surface-container">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm overflow-hidden border-2 border-secondary-fixed">
+<span class="material-symbols-outlined text-[32px]" data-icon="person">person</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Direct Concierge</span>
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight">A Real Person to Help With Your Booking</h2>
+</div>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          I'm here to make ticket booking simpler. Tell me where you want to go, when you plan to travel, and what type of ticket you need. I'll help you understand the available booking options and guide you through the process.
+        </p>
+<ul class="flex flex-col gap-2 pt-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Personal communication directly on phone/WhatsApp</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Transparent service charges disclosed upfront</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Help with cancellation, changes, and booking queries</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 5. HOW IT WORKS (Simple 3-Step Process) -->
+<section class="mt-space-xl flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">How It Works</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">Simple 3-step booking flow without confusion.</p>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Step 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold">
+            01
+          </div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-primary font-bold">Share Your Requirements</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Send your travel details and preferred date through WhatsApp or the enquiry form below.
+            </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold">
+            02
+          </div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-primary font-bold">Discuss the Options</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              I'll review the request and explain the available options, applicable ticket costs, and service charges.
+            </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold">
+            03
+          </div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-primary font-bold">Get Booking Assistance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Once you approve the details, I'll assist with the booking through the appropriate external platform and forward your confirmed ticket.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. STRAIGHTFORWARD SERVICE. PERSONAL SUPPORT. (Trust Highlights) -->
+<section class="mt-space-xl p-space-md rounded-xl bg-surface-container-lowest border border-surface-container">
+<div class="flex flex-col gap-1 pb-space-sm border-b border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Genuine Standards</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Straightforward Service. Personal Support.</h2>
+</div>
+<div class="pt-space-sm grid grid-cols-1 gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded bg-surface-container text-on-tertiary-container mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Direct Communication</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Talk directly with the actual person assisting you, not a generic ticketing chatbot.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded bg-surface-container text-on-tertiary-container mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">No Hidden Fees</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Assistance charges are clearly explained before any booking action begins.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded bg-surface-container text-on-tertiary-container mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Details Confirmed First</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Seat class, passenger spellings, and timings are confirmed with you before reservation.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="p-1.5 rounded bg-surface-container text-on-tertiary-container mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="update">update</span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Follow-up Help</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ongoing support for schedule updates, platform changes, or rescheduling needs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. INTERACTIVE FAQ ACCORDION -->
+<section class="mt-space-xl flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">Frequently Asked Questions</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">Clear answers regarding personal assistance and bookings.</p>
+</div>
+<div class="flex flex-col gap-2" id="faq-container">
+<!-- FAQ Item 1 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">How can I request a ticket booking?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Message me on WhatsApp or fill the quick form below with your journey or movie details. I will review availability and get back to you promptly.
+          </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">Which types of tickets do you assist with?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Bus, Train, Domestic &amp; International Flights, and Movie tickets across India.
+          </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">How much do you charge for your service?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Service charges vary by ticket type and complexity (e.g. standard vs urgent tatkal coordination), and are always communicated upfront before any booking is made.
+          </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">Will my ticket be confirmed immediately?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            No, availability depends on real-time operator systems (IRCTC, airlines, bus operators). I verify real options with you first before proceeding with any reservation.
+          </div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">Can I ask about an existing booking?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Yes, message me with your reference or booking details for guidance on status, chart preparation, or schedule changes.
+          </div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">What happens if I need to cancel or change a booking?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Cancellation and refund terms follow the respective airline, railway, bus operator, or cinema policy. I guide you through their specific cancellation process without hassle.
+          </div>
+</div>
+<!-- FAQ Item 7 -->
+<div class="rounded-lg bg-surface-container-lowest border border-surface-container overflow-hidden">
+<button aria-expanded="false" class="faq-toggle w-full px-space-md py-3 text-left flex justify-between items-center gap-2" type="button">
+<span class="font-title-sm text-title-sm text-primary font-medium">How will I receive my ticket details?</span>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-3 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container-low pt-2">
+            Your official e-ticket PDF / SMS confirmation will be sent directly to your WhatsApp and email once successfully booked.
+          </div>
+</div>
+</div>
+</section>
+<!-- 8. MAIN ENQUIRY & CONVERSION FORM -->
+<section class="mt-space-xl p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm" id="enquiry">
+<div class="flex flex-col gap-1 pb-space-sm border-b border-surface-container">
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">Let's Sort Out Your Ticket</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tell me what you need, and I'll help you with the next steps.</p>
+</div>
+<!-- Fast contact buttons row -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-sm pb-space-md">
+<a class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg text-on-tertiary font-title-sm text-title-sm active:scale-95 transition-transform duration-150" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20want%20to%20enquire%20about%20a%20ticket" rel="noopener noreferrer" style="background-color: #16A34A;" target="_blank">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+<span>WhatsApp Me</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container text-primary font-title-sm text-title-sm border border-surface-container-high active:scale-95 transition-transform duration-150" href="tel:919876543210">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Call Directly</span>
+</a>
+</div>
+<!-- Functional Enquiry Form -->
+<form class="flex flex-col gap-space-sm" id="enquiryForm" onsubmit="handleFormSubmit(event)">
+<!-- Name -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="userName">Your Name</label>
+<input class="w-full h-11 px-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="userName" placeholder="e.g. Amit Sharma" required="" type="text"/>
+</div>
+<!-- Ticket Type Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="ticketType">Ticket Type</label>
+<select class="w-full h-11 px-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="ticketType" onchange="updateFormContext()">
+<option value="Train">Train Booking</option>
+<option value="Bus">Bus Booking</option>
+<option value="Flight">Flight Booking</option>
+<option value="Movie">Movie Ticket Booking</option>
+</select>
+</div>
+<!-- Conditional Locations (From / To or Cinema / City) -->
+<div class="grid grid-cols-2 gap-space-sm" id="routeFields">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="fromCity" id="fromLabel">From City</label>
+<input class="w-full h-11 px-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="fromCity" placeholder="e.g. Mumbai" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="toCity" id="toLabel">Destination</label>
+<input class="w-full h-11 px-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="toCity" placeholder="e.g. Goa" required="" type="text"/>
+</div>
+</div>
+<!-- Date -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="journeyDate" id="dateLabel">Journey Date</label>
+<input class="w-full h-11 px-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="journeyDate" required="" type="date"/>
+</div>
+<!-- Short Notes -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium" for="userNotes">Requirements / Preferred Timing</label>
+<textarea class="w-full p-3 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" id="userNotes" placeholder="e.g., 2 AC Berths, evening departure, or cinema screen preference" rows="2"></textarea>
+</div>
+<!-- Preferred Contact Method -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-md text-label-md text-primary font-medium">Preferred Contact Method</span>
+<div class="flex items-center gap-space-md">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 text-secondary focus:ring-secondary" name="contactMethod" type="radio" value="WhatsApp"/>
+<span class="font-body-sm text-body-sm text-on-surface">WhatsApp Message</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-secondary focus:ring-secondary" name="contactMethod" type="radio" value="Phone"/>
+<span class="font-body-sm text-body-sm text-on-surface">Phone Call</span>
+</label>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-4 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm font-semibold active:scale-95 transition-all duration-150 flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+<span>Send Enquiry to TicketWala</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-2 leading-tight">
+            Your details will open directly in WhatsApp so we can coordinate personally.
+          </p>
+</div>
+</form>
+</section>
+</main>
+<!-- 9. COMPACT DARK NAVY FOOTER (Shared Components Anchor Footer) -->
+<footer class="w-full px-space-md py-space-xl pb-28 flex flex-col items-center text-center gap-space-md bg-primary text-surface-container-lowest border-t border-primary-container">
+<div class="flex flex-col items-center gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-title-md text-title-md font-bold text-surface-container-lowest">TicketWala</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline-variant max-w-sm">
+        Personal ticket booking assistance across India. Real human coordination for train, bus, flight, and event bookings.
+      </p>
+</div>
+<!-- Contact & Action Links -->
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 font-label-md text-label-md text-surface-container-highest">
+<a class="hover:text-surface-container-lowest transition-colors flex items-center gap-1" href="https://wa.me/919876543210">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="chat">chat</span>
+<span>+91 98765 43210</span>
+</a>
+<span>â€¢</span>
+<a class="hover:text-surface-container-lowest transition-colors flex items-center gap-1" href="tel:919876543210">
+<span class="material-symbols-outlined text-[16px]" data-icon="call">call</span>
+<span>Call Directly</span>
+</a>
+</div>
+<!-- Explicit Legal Disclaimer -->
+<div class="p-3 rounded bg-primary-container border border-on-primary-fixed-variant text-left max-w-sm">
+<p class="font-body-sm text-body-sm text-outline-variant leading-relaxed text-[11px]">
+<strong>Independent Service Notice:</strong> TicketWala is an independent booking assistance service. We are not an official portal or affiliated with IRCTC, Indian Railways, airlines, or cinema chains. Bookings are processed on client behalf via authorized public platforms.
+      </p>
+</div>
+<!-- Navigation links from Shared Components -->
+<div class="flex flex-wrap justify-center gap-3 font-label-sm text-label-sm text-outline-variant">
+<a class="hover:text-surface-container-lowest underline" href="#enquiry">Terms of Service</a>
+<span>â€¢</span>
+<a class="hover:text-surface-container-lowest underline" href="#enquiry">Privacy Policy</a>
+<span>â€¢</span>
+<a class="hover:text-surface-container-lowest underline" href="https://wa.me/919876543210">Direct WhatsApp Support</a>
+<span>â€¢</span>
+<a class="hover:text-surface-container-lowest underline" href="#enquiry">Pricing Transparency</a>
+</div>
+<div class="font-body-sm text-body-sm text-outline-variant text-[11px] pt-1">
+      Â© 2024 TicketWala. Independent travel &amp; event booking assistance. Not affiliated with IRCTC or official reservation portals.
+    </div>
+</footer>
+<!-- 10. MOBILE FIXED BOTTOM CONTACT BAR (Concierge Bar) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-surface-container px-space-md py-2.5 shadow-lg flex items-center gap-space-sm max-w-lg left-1/2 -translate-x-1/2">
+<!-- WhatsApp CTA -->
+<a class="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-lg text-on-tertiary font-title-sm text-title-sm font-semibold active:scale-95 transition-transform" href="https://wa.me/919876543210?text=Hi%20TicketWala%2C%20I%20need%20help%20with%20a%20ticket%20booking" rel="noopener noreferrer" style="background-color: #16A34A;" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+<span>WhatsApp</span>
+</a>
+<!-- Direct Call CTA -->
+<a class="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm font-semibold active:scale-95 transition-transform" href="tel:919876543210">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Call Me</span>
+</a>
+</div>
+<script>
+    // FAQ Accordion Interaction
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.material-symbols-outlined');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        // Toggle state
+        if (isExpanded) {
+          button.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          button.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Form Context Dynamic Switcher
+    function updateFormContext() {
+      const type = document.getElementById('ticketType').value;
+      const fromLabel = document.getElementById('fromLabel');
+      const toLabel = document.getElementById('toLabel');
+      const dateLabel = document.getElementById('dateLabel');
+      const fromCity = document.getElementById('fromCity');
+      const toCity = document.getElementById('toCity');
+
+      if (type === 'Movie') {
+        fromLabel.textContent = 'City';
+        fromCity.placeholder = 'e.g. Pune';
+        toLabel.textContent = 'Cinema / Movie Name';
+        toCity.placeholder = 'e.g. PVR / Stree 2';
+        dateLabel.textContent = 'Show Date';
+      } else {
+        fromLabel.textContent = 'From City';
+        fromCity.placeholder = 'e.g. Mumbai';
+        toLabel.textContent = 'Destination';
+        toCity.placeholder = 'e.g. Goa';
+        dateLabel.textContent = 'Journey Date';
+      }
+    }
+
+    // Enquiry Form Submission -> Format WhatsApp Message
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('userName').value;
+      const type = document.getElementById('ticketType').value;
+      const from = document.getElementById('fromCity').value;
+      const to = document.getElementById('toCity').value;
+      const date = document.getElementById('journeyDate').value;
+      const notes = document.getElementById('userNotes').value;
+      const method = document.querySelector('input[name="contactMethod"]:checked').value;
+
+      let msg = `Hi TicketWala! I would like help booking a ticket:\n`;
+      msg += `â€¢ Name: ${name}\n`;
+      msg += `â€¢ Ticket: ${type}\n`;
+      msg += `â€¢ Details: ${from} to ${to}\n`;
+      msg += `â€¢ Date: ${date}\n`;
+      if (notes) msg += `â€¢ Notes: ${notes}\n`;
+      msg += `â€¢ Preferred Contact: ${method}`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/919876543210?text=${encoded}`, '_blank');
+    }
+  </script>
+</body></html>
